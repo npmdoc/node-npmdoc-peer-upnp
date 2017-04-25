@@ -1,6 +1,7 @@
 # npmdoc-peer-upnp
 
-api documentation for  [peer-upnp (v0.0.5)](https://github.com/fraunhoferfokus/peer-upnp#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-peer-upnp.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-peer-upnp) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-peer-upnp.svg)](https://travis-ci.org/npmdoc/node-npmdoc-peer-upnp)
+#### basic api documentation for  [peer-upnp (v0.0.5)](https://github.com/fraunhoferfokus/peer-upnp#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-peer-upnp.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-peer-upnp) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-peer-upnp.svg)](https://travis-ci.org/npmdoc/node-npmdoc-peer-upnp)
+
 #### Nodejs implementation of the UPnP Device Architecture 1.1
 
 [![NPM](https://nodei.co/npm/peer-upnp.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/peer-upnp)
@@ -64,7 +65,8 @@ api documentation for  [peer-upnp (v0.0.5)](https://github.com/fraunhoferfokus/p
         "url": "git+https://github.com/fraunhoferfokus/peer-upnp.git"
     },
     "scripts": {},
-    "version": "0.0.5"
+    "version": "0.0.5",
+    "bin": {}
 }
 ```
 
