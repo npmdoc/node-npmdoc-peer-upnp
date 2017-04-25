@@ -81,6 +81,12 @@
 
         </li>
 
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">peer-upnp.</span>peer_upnp</span>
+
+        </li>
+
     </ol></li>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.peer-upnp.UPnPError">module peer-upnp.UPnPError</a><ol>
@@ -133,12 +139,21 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.peer-upnp.createPeer">module peer-upnp.createPeer</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.peer-upnp.peer_upnp">module peer-upnp.peer_upnp</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.peer-upnp.createPeer.createPeer">
-            function <span class="apidocSignatureSpan">peer-upnp.</span>createPeer
+            <a class="apidocElementLiA" href="#apidoc.element.peer-upnp.peer_upnp.UPnPError">
+            function <span class="apidocSignatureSpan">peer-upnp.peer_upnp.</span>UPnPError
+            <span class="apidocSignatureSpan">(message, code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.peer-upnp.peer_upnp.createPeer">
+            function <span class="apidocSignatureSpan">peer-upnp.peer_upnp.</span>createPeer
             <span class="apidocSignatureSpan">(options)</span>
             </a>
 
@@ -216,6 +231,8 @@ var peer = upnp.<span class="apidocCodeKeywordSpan">createPeer</span>({
     </ul>
 
 
+
+
 </div>
 
 <div class="apidocSectionDiv">
@@ -280,7 +297,23 @@ var peer = upnp.<span class="apidocCodeKeywordSpan">createPeer</span>({
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var RENDER_SOAP_REQ = ejs.compile(SOAP_REQ_TEMPLATE, { open: '{{', close: '}}' });
+var RENDER_SOAP_RSP = ejs.compile(SOAP_RSP_TEMPLATE, { open: '{{', close: '}}' });
+var RENDER_EVENT = ejs.compile(EVENT_TEMPLATE, { open: '{{', close: '}}' });
+
+var SSDP_ALL = "ssdp:all";
+var UPnPError = function(message,code) {
+	Error.call(this);
+	Error.<span class="apidocCodeKeywordSpan">captureStackTrace</span>(this, this.constructor);
+	this.name = "UPnPError";
+	this.message = message;
+	this.code = parseInt(code) || 0;
+};
+util.inherits(UPnPError, Error);
+
+var createPeer = function(options){
+...</pre></li>
     </ul>
 
 
@@ -289,12 +322,31 @@ var peer = upnp.<span class="apidocCodeKeywordSpan">createPeer</span>({
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.peer-upnp.createPeer" id="apidoc.module.peer-upnp.createPeer">module peer-upnp.createPeer</a></h1>
+<h1><a href="#apidoc.module.peer-upnp.peer_upnp" id="apidoc.module.peer-upnp.peer_upnp">module peer-upnp.peer_upnp</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.peer-upnp.createPeer.createPeer" id="apidoc.element.peer-upnp.createPeer.createPeer">
-        function <span class="apidocSignatureSpan">peer-upnp.</span>createPeer
+        <a href="#apidoc.element.peer-upnp.peer_upnp.UPnPError" id="apidoc.element.peer-upnp.peer_upnp.UPnPError">
+        function <span class="apidocSignatureSpan">peer-upnp.peer_upnp.</span>UPnPError
+        <span class="apidocSignatureSpan">(message, code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">UPnPError = function (message, code) {
+	Error.call(this);
+	Error.captureStackTrace(this, this.constructor);
+	this.name = "UPnPError";
+	this.message = message;
+	this.code = parseInt(code) || 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.peer-upnp.peer_upnp.createPeer" id="apidoc.element.peer-upnp.peer_upnp.createPeer">
+        function <span class="apidocSignatureSpan">peer-upnp.peer_upnp.</span>createPeer
         <span class="apidocSignatureSpan">(options)</span>
         </a>
     </h2>
